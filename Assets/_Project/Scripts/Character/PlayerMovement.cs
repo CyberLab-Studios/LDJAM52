@@ -90,8 +90,13 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(movementSpeed * Time.deltaTime * moveVector);
 
             var dir = new Vector3(moveVector.x, 0, moveVector.z);
-            RotateTo(dir);
+            dir.y = 0;
 
+            if (dir != Vector3.zero)
+            {
+                Quaternion newRot = Quaternion.LookRotation(dir, transform.up);
+                body.rotation = newRot;
+            }
         }
         else
         {
@@ -104,9 +109,8 @@ public class PlayerMovement : MonoBehaviour
         target.y = 0;
 
         if (target != Vector3.zero)
-        {
-            Quaternion newRot = Quaternion.LookRotation(target);
-            body.rotation = newRot;
+        {            
+            body.LookAt(target);
         }
     }
 }

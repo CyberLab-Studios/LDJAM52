@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SeeingDistance: 4
   SeeingAngle: 170
-  AttackRange: 1
+  AttackRange: 2
   AttackCooldown: 1
   Damage: 5
   MaxHealth: 50

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class BaseEnemy : MonoBehaviour, IEnemy
 {
@@ -52,6 +53,38 @@ public class BaseEnemy : MonoBehaviour, IEnemy
                 agent.SetDestination(playerTarget.position);
             }
         }
+        else
+        {
+            if (agent.remainingDistance < .5f)
+            {
+                if (actualState != EnemyState.Idle)
+                    StartCoroutine(WaitAndGetANewPosition());
+            }
+        }
+    }
+
+    IEnumerator WaitAndGetANewPosition()
+    {
+        actualState = EnemyState.Idle;
+        var wait = Random.Range(2, 10);
+        Debug.Log($"Wait {wait} seconds before move");
+        yield return new WaitForSeconds(wait);
+        agent.SetDestination(GetValidDestination());
+        actualState = EnemyState.Patrolling;
+    }
+
+    Vector3 GetValidDestination()
+    {
+        var randomPos = Random.insideUnitCircle * 10;
+
+        Vector3 dest = transform.position + new Vector3(randomPos.x, transform.position.y, randomPos.y);
+
+        if (NavMesh.FindClosestEdge(dest, out var hit2, worldLayerMask))
+        {
+            dest = hit2.position;
+        }
+
+        return dest;
     }
 
     IEnumerator AttackPlayer()
