@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         GameEvents.Instance.onAttack += IsAttacking;
         GameEvents.Instance.onDialogueStart += NotControl;
         GameEvents.Instance.onDialogueEnd += GiveControl;
+        GameEvents.Instance.onLookAt += RotateTo;
     }
 
     private void OnDisable()
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         GameEvents.Instance.onAttack -= IsAttacking;
         GameEvents.Instance.onDialogueStart -= NotControl;
         GameEvents.Instance.onDialogueEnd -= GiveControl;
+        GameEvents.Instance.onLookAt -= RotateTo;
     }
 
     private void GiveControl()
@@ -88,15 +90,23 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(movementSpeed * Time.deltaTime * moveVector);
 
             var dir = new Vector3(moveVector.x, 0, moveVector.z);
-            if (dir != Vector3.zero)
-            {
-                Quaternion newRot = Quaternion.LookRotation(dir);
-                body.rotation = newRot;
-            }
+            RotateTo(dir);
+
         }
         else
         {
             anim.SetFloat("Speed", 0);
+        }
+    }
+
+    public void RotateTo(Vector3 target)
+    {
+        target.y = 0;
+
+        if (target != Vector3.zero)
+        {
+            Quaternion newRot = Quaternion.LookRotation(target);
+            body.rotation = newRot;
         }
     }
 }

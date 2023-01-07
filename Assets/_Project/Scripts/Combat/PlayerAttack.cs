@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public Animator anim;
     public float weaponCooldown;
-    public float attackTime = 3;
+    public float animationTime = 3;
     bool hasScythe = false;
     float tempCooldown;
     bool hasControl = true;
@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
         {
             anim.SetTrigger("Attack");
             tempCooldown = weaponCooldown;
-            GameEvents.Instance.OnAttack(attackTime);
+            GameEvents.Instance.OnAttack(animationTime);
         }
     }
 

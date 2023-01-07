@@ -14,7 +14,6 @@ public class WeaponCollision : MonoBehaviour
         GameEvents.Instance.onAttack += OnAttack;
     }
 
-
     private void OnDisable()
     {
         GameEvents.Instance.onEquipScythe -= GetScytheData;
@@ -43,7 +42,11 @@ public class WeaponCollision : MonoBehaviour
     {
         if (isAttacking)
         {
-            Debug.Log($"Hit with: {other.gameObject.name}");
+            if (other.TryGetComponent(out IEnemy enemy))
+            {
+                Debug.Log($"Colpito: {enemy}");
+                enemy.TakeDamage(damage);
+            }
         }
     }
 }

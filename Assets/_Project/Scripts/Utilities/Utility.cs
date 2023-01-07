@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -39,5 +40,6 @@ namespace CyberLabStudios.Game.Utilities
         public static bool IsFilled(this string str) => !str.IsNullOrEmpty() && !str.IsNullOrWhiteSpace();
         public static bool IsNullOrEmpty(this string str) => string.IsNullOrEmpty(str);
         public static bool IsNullOrWhiteSpace(this string str) => string.IsNullOrWhiteSpace(str);
+        public static bool InRange(this float value, float minValue, float maxValue) => value >= minValue && value <= maxValue;
     }
 }

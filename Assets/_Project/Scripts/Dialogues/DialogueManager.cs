@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
     public bool playOnAwake = false;
     public string iteractionText;
     public bool resetIndexOnEnd = true;
-
+    PlayerMovement player;
 
     public List<DialogueSentence> sentences;
 
@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        GameEvents.Instance.OnLookAt(transform.position);
         ShowNextSentence();
     }
 

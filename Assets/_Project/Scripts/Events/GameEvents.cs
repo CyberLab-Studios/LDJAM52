@@ -40,4 +40,10 @@ public class GameEvents : SingletonClass<GameEvents>
     {
         onAttack?.Invoke(time);
     }
+
+    public event Action<Vector3> onLookAt;
+    public void OnLookAt(Vector3 target)
+    {
+        onLookAt?.Invoke(target);
+    }
 }
