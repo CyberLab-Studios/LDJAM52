@@ -11,10 +11,10 @@ public class GameEvents : SingletonClass<GameEvents>
         onButtonInteract?.Invoke(id);
     }
 
-    public event Action<string> onDialogueShow;
-    public void OnDialogueShow(string sentence)
+    public event Action<string, string> onDialogueShow;
+    public void OnDialogueShow(string whosTalking, string sentence)
     {
-        onDialogueShow?.Invoke(sentence);
+        onDialogueShow?.Invoke(whosTalking, sentence);
     }
 
     public event Action onDialogueStart;

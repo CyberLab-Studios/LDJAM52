@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogueUI : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI whosTalkingText;
     public CanvasGroup dialoguePanel;
     public float charSpeed;
     public GameObject nextButton;
@@ -41,10 +42,13 @@ public class DialogueUI : MonoBehaviour
         dialoguePanel.alpha = 0;
     }
 
-    void ShowSentence(string sentence)
+    void ShowSentence(string whosTalking, string sentence)
     {
         if (!isTyping)
+        {
+            whosTalkingText.text = whosTalking;
             StartCoroutine(TypeSentence(sentence));
+        }
     }
 
     IEnumerator TypeSentence(string sentence)

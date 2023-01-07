@@ -1,4 +1,5 @@
 using CyberLabStudios.Game.Interactions;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,8 +10,8 @@ public class DialogueManager : MonoBehaviour, IInteractable
     public string iteractionText;
     public bool resetIndexOnEnd = true;
 
-    [TextArea(2, 5)]
-    public List<string> sentences;
+
+    public List<DialogueSentence> sentences;
 
     public UnityEvent onDialogueStart;
     public UnityEvent onDialogueEnd;
@@ -53,7 +54,8 @@ public class DialogueManager : MonoBehaviour, IInteractable
             return;
         }
 
-        GameEvents.Instance.OnDialogueShow(sentences[sentenceIndex]);
+        var actualSentence = sentences[sentenceIndex];
+        GameEvents.Instance.OnDialogueShow(actualSentence.WhosTalking, actualSentence.Sentence);
     }
 
     public string GetInteractText()
@@ -65,4 +67,12 @@ public class DialogueManager : MonoBehaviour, IInteractable
     {
         return transform;
     }
+}
+
+[Serializable]
+public class DialogueSentence
+{
+    public string WhosTalking;
+    [TextArea(2, 5)]
+    public string Sentence;
 }
