@@ -1,5 +1,6 @@
 using CyberLabStudios.Game.Interactions;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,8 @@ public class DialogueManager : MonoBehaviour, IInteractable
     public bool playOnAwake = false;
     public string iteractionText;
     public bool resetIndexOnEnd = true;
+    public bool isAutoplay = false;
+    public float autoPlayTime = 2;
     PlayerMovement player;
 
     public List<DialogueSentence> sentences;
@@ -18,6 +21,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
 
     bool isShowing = false;
     int sentenceIndex = -1;
+
 
     void Start()
     {
@@ -33,7 +37,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
         ShowNextSentence();
     }
 
-    private void ShowNextSentence()
+    public void ShowNextSentence()
     {
         sentenceIndex++;
         if (!isShowing)
@@ -57,6 +61,18 @@ public class DialogueManager : MonoBehaviour, IInteractable
 
         var actualSentence = sentences[sentenceIndex];
         GameEvents.Instance.OnDialogueShow(actualSentence.WhosTalking, actualSentence.Sentence);
+
+        if (isAutoplay)
+        {
+            StopAllCoroutines();
+            StartCoroutine(PlayNextSentence());
+        }
+    }
+
+    IEnumerator PlayNextSentence()
+    {
+        yield return new WaitForSeconds(autoPlayTime);
+        ShowNextSentence();
     }
 
     public string GetInteractText()
