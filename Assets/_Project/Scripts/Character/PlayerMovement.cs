@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -30,6 +32,43 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+    private void Start()
+    {
+        GameEvents.Instance.onAttack += IsAttacking;
+        GameEvents.Instance.onDialogueStart += NotControl;
+        GameEvents.Instance.onDialogueEnd += GiveControl;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.onAttack -= IsAttacking;
+        GameEvents.Instance.onDialogueStart -= NotControl;
+        GameEvents.Instance.onDialogueEnd -= GiveControl;
+    }
+
+    private void GiveControl()
+    {
+        ToggleControl(true);
+    }
+
+    private void NotControl()
+    {
+        ToggleControl(false);
+    }
+
+    private void IsAttacking(float time)
+    {
+        StopAllCoroutines();
+        StartCoroutine(StopControlsFor(time));
+    }
+
+    IEnumerator StopControlsFor(float time)
+    {
+        hasControl = false;
+        yield return new WaitForSeconds(time);
+        hasControl = true;
+    }
+
     private void Update()
     {
         var x = camOffset.right * moveDirection.x;
@@ -48,9 +87,9 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Speed", moveDirection.magnitude);
             controller.Move(movementSpeed * Time.deltaTime * moveVector);
 
-            if (moveVector != Vector3.zero)
+            var dir = new Vector3(moveVector.x, 0, moveVector.z);
+            if (dir != Vector3.zero)
             {
-                var dir = new Vector3(moveVector.x, 0, moveVector.z);
                 Quaternion newRot = Quaternion.LookRotation(dir);
                 body.rotation = newRot;
             }

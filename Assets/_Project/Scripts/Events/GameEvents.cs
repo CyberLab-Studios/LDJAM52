@@ -28,4 +28,16 @@ public class GameEvents : SingletonClass<GameEvents>
     {
         onDialogueEnd?.Invoke();
     }
+
+    public event Action<ScytheData> onEquipScythe;
+    public void OnEquipScythe(ScytheData scytheData)
+    {
+        onEquipScythe?.Invoke(scytheData);
+    }
+
+    public event Action<float> onAttack;
+    public void OnAttack(float time)
+    {
+        onAttack?.Invoke(time);
+    }
 }

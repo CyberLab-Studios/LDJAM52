@@ -44,18 +44,15 @@ public class DialogueUI : MonoBehaviour
 
     void ShowSentence(string whosTalking, string sentence)
     {
-        if (!isTyping)
-        {
-            whosTalkingText.text = whosTalking;
-            StartCoroutine(TypeSentence(sentence));
-        }
+        StopAllCoroutines();
+        whosTalkingText.text = whosTalking;
+        StartCoroutine(TypeSentence(sentence));
     }
 
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
 
-        nextButton.SetActive(false);
         isTyping = true;
         foreach (var character in sentence.ToCharArray())
         {
@@ -63,6 +60,5 @@ public class DialogueUI : MonoBehaviour
             yield return new WaitForSeconds(charSpeed);
         }
         isTyping = false;
-        nextButton.SetActive(true);
     }
 }
