@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
     public float rotationSpeed;
+    public float gravity = -9.8f;
     public Transform camOffset;
     public Transform body;
     public Animator anim;
@@ -35,7 +36,11 @@ public class PlayerMovement : MonoBehaviour
         var z = camOffset.forward * moveDirection.y;
 
         moveVector = (x + z).normalized;
-        moveVector.y = 0;
+
+        if (!controller.isGrounded)
+            moveVector.y = gravity * Time.deltaTime;
+        else
+            moveVector.y = 0;
 
 
         if (hasControl)
@@ -45,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (moveVector != Vector3.zero)
             {
-                Quaternion newRot = Quaternion.LookRotation(moveVector);
+                var dir = new Vector3(moveVector.x, 0, moveVector.z);
+                Quaternion newRot = Quaternion.LookRotation(dir);
                 body.rotation = newRot;
             }
         }
