@@ -1,0 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEditor.Rendering;
+using UnityEngine;
+
+public class DialogueUI : MonoBehaviour
+{
+    public TextMeshProUGUI dialogueText;
+    public CanvasGroup dialoguePanel;
+    public float charSpeed;
+    public GameObject nextButton;
+    bool isTyping = false;
+
+    private void Awake()
+    {
+        GameEvents.Instance.onDialogueShow += ShowSentence;
+        GameEvents.Instance.onDialogueStart += ShowPanel;
+        GameEvents.Instance.onDialogueEnd += HidePanel;
+    }
+
+    private void Start()
+    {
+        HidePanel();
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.onDialogueShow -= ShowSentence;
+        GameEvents.Instance.onDialogueStart -= ShowPanel;
+        GameEvents.Instance.onDialogueEnd -= HidePanel;
+    }
+
+    void ShowPanel()
+    {
+        dialoguePanel.alpha = 1.0f;
+    }
+
+    void HidePanel()
+    {
+        dialoguePanel.alpha = 0;
+    }
+
+    void ShowSentence(string sentence)
+    {
+        if (!isTyping)
+            StartCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+
+        nextButton.SetActive(false);
+        isTyping = true;
+        foreach (var character in sentence.ToCharArray())
+        {
+            dialogueText.text += character;
+            yield return new WaitForSeconds(charSpeed);
+        }
+        isTyping = false;
+        nextButton.SetActive(true);
+    }
+}
