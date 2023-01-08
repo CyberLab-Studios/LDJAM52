@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74afb8cdda47d65419be8fae2f80ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 8
+  movementSpeed: 4
   rotationSpeed: 180
   gravity: -60
   camOffset: {fileID: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824b452779d17f4eab3db67b5f451f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 4
+  interactRange: 2
 --- !u!136 &1974326235
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -239,7 +239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 6171272482776893922}
-  weaponCooldown: 2
+  weaponCooldown: 1
+  animationTime: 3
+  swoosh: {fileID: 11400000, guid: 956c0a31e0229cf4baeddcebf34e98da, type: 2}
+  audioDelay: 0.5
 --- !u!114 &1974326237
 MonoBehaviour:
   m_ObjectHideFlags: 0
