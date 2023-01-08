@@ -8,6 +8,8 @@ public class EquippableScythe : MonoBehaviour, IInteractable
     public string interactionText;
     public ScytheData scythe;
 
+    public bool interacted { get; set; }
+
     public string GetInteractText()
     {
         return interactionText;

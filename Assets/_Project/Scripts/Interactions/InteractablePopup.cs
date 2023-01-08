@@ -14,7 +14,7 @@ namespace CyberLabStudios.Game.Interactions
             if (charInteraction != null)
             {
                 var inter = charInteraction.GetInteractableObject();
-                if (inter != null && inter.enabled)
+                if (inter != null && inter.enabled && !inter.interacted)
                 {
                     ShowPopup(inter);
                     return;

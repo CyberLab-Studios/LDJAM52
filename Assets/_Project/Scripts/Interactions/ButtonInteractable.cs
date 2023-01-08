@@ -17,6 +17,8 @@ namespace CyberLabStudios.Game.Interactions
 
         public string interactionMessage;
 
+        public bool interacted { get; set; }
+
         public string GetInteractText()
         {
             return !interactionMessage.IsFilled() ? "Interagisci" : interactionMessage;

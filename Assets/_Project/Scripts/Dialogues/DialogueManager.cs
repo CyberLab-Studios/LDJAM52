@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
     bool isShowing = false;
     int sentenceIndex = -1;
 
+    public bool interacted { get; set; }
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
             GameEvents.Instance.OnDialogueStart();
             onDialogueStart?.Invoke();
             isShowing = true;
+            interacted = true;
         }
 
         if (sentenceIndex >= sentences.Count)
@@ -52,6 +54,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
             isShowing = false;
             GameEvents.Instance.OnDialogueEnd();
             onDialogueEnd?.Invoke();
+            interacted = false;
 
             if (resetIndexOnEnd)
                 sentenceIndex = -1;
