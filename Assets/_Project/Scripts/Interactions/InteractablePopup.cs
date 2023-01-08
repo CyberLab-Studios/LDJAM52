@@ -14,10 +14,13 @@ namespace CyberLabStudios.Game.Interactions
             if (charInteraction != null)
             {
                 var inter = charInteraction.GetInteractableObject();
-                if (inter != null && inter.enabled && !inter.interacted)
+                if (inter != null)
                 {
-                    ShowPopup(inter);
-                    return;
+                    if (inter.enabled && !inter.interacted)
+                    {
+                        ShowPopup(inter);
+                        return;
+                    }
                 }
                 else
                 {

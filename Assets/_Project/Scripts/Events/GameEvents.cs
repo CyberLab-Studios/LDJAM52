@@ -46,4 +46,10 @@ public class GameEvents : SingletonClass<GameEvents>
     {
         onLookAt?.Invoke(target);
     }
+
+    public event Action<Transform> onTileMove;
+    public void OnTileMove(Transform tileToMove)
+    {
+        onTileMove?.Invoke(tileToMove);
+    }
 }
