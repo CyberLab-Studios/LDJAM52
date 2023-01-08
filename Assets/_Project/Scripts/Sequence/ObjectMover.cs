@@ -27,9 +27,10 @@ public class ObjectMover : MonoBehaviour
         while (Vector3.Distance(transform.position, target) > 0.5f)
         {
             rb.MovePosition(Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime));
-            anim?.SetFloat("Speed", rb.velocity.magnitude);
+            anim?.SetFloat("Speed", 1);
             yield return null;
         }
+        anim?.SetFloat("Speed", 0);
     }
 
     public void MoveTo(Transform target)
