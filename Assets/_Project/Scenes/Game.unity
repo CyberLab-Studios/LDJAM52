@@ -153,6 +153,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence:
+  - timeBeforeInvoke: 0
+    eventToInvoke:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980389796}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: ToggleControl
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    timeAfterInvoke: 0
   - timeBeforeInvoke: 2
     eventToInvoke:
       m_PersistentCalls:
@@ -219,6 +236,23 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+    timeAfterInvoke: 0
+  - timeBeforeInvoke: 1
+    eventToInvoke:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980389796}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: ToggleControl
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
     timeAfterInvoke: 0
   playOnAwake: 1
@@ -3922,6 +3956,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &1980389796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8334844813573457556, guid: 8f32213b75c24824889e58043ac98609,
+    type: 3}
+  m_PrefabInstance: {fileID: 8334844813818131188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980389784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74afb8cdda47d65419be8fae2f80ae11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031013420
 GameObject:
   m_ObjectHideFlags: 0

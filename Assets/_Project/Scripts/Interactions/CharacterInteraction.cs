@@ -23,7 +23,7 @@ namespace CyberLabStudios.Game.Interactions
         void CheckInteraction()
         {
             IInteractable interactable = GetInteractableObject();
-            if (interactable != null)
+            if (interactable != null && interactable.enabled)
             {
                 interactable.Interact();
             }

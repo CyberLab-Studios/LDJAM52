@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
     public bool resetIndexOnEnd = true;
     public bool isAutoplay = false;
     public float autoPlayTime = 2;
-    PlayerMovement player;
+    PlayerMovement player;    
 
     public List<DialogueSentence> sentences;
 

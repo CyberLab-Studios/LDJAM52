@@ -6,6 +6,7 @@ namespace CyberLabStudios.Game.Interactions
 {
     public interface IInteractable
     {
+        bool enabled { get; }
         void Interact();
         string GetInteractText();
         Transform GetTransform();

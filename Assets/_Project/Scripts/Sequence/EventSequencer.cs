@@ -29,7 +29,6 @@ public class EventSequencer : MonoBehaviour
         {
             yield return new WaitForSeconds(element.timeBeforeInvoke);
             element.eventToInvoke.Invoke();
-            yield return new WaitForSeconds(element.timeAfterInvoke);
         }
     }
 }
@@ -39,5 +38,4 @@ public class SequenceElement
 {
     public float timeBeforeInvoke;
     public UnityEvent eventToInvoke;
-    public float timeAfterInvoke;
 }
