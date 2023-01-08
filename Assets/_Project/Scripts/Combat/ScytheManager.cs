@@ -7,7 +7,7 @@ public class ScytheManager : MonoBehaviour
     public Transform handParent;
     public GameObject actualScythe;
 
-    private void Start()
+    private void Awake()
     {
         GameEvents.Instance.onEquipScythe += EquipScythe;
     }
