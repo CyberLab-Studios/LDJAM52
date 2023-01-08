@@ -17,15 +17,16 @@ public class ObjectMover : MonoBehaviour
     public void MoveTo(Vector3 target)
     {
         target.y = transform.position.y;
+        StopAllCoroutines();
         StartCoroutine(Move(target));
-        
+
     }
 
     IEnumerator Move(Vector3 target)
     {
-        while(Vector3.Distance(transform.position, target) > 0.5f)
+        while (Vector3.Distance(transform.position, target) > 0.5f)
         {
-            rb.MovePosition(transform.position + target * movementSpeed * Time.deltaTime);
+            rb.MovePosition(Vector3.MoveTowards(transform.position, target, movementSpeed * Time.deltaTime));
             anim?.SetFloat("Speed", rb.velocity.magnitude);
             yield return null;
         }
