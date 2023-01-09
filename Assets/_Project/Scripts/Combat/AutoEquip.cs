@@ -13,4 +13,9 @@ public class AutoEquip : MonoBehaviour
             GameEvents.Instance.OnEquipScythe(itemToEquip);
         }
     }
+
+    public void Equip(ScytheData scythe)
+    {
+        GameEvents.Instance.OnEquipScythe(scythe);
+    }
 }

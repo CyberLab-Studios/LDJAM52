@@ -64,6 +64,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Resolve"",
+                    ""type"": ""Button"",
+                    ""id"": ""135d03dd-c7c9-4a9c-99cb-5d0f67f77c01"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -306,6 +315,17 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de58fa1e-9095-446e-8986-14581542cc8a"",
+                    ""path"": ""<Keyboard>/f5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Resolve"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -897,6 +917,7 @@ namespace UnityEngine.InputSystem
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_Resolve = m_Player.FindAction("Resolve", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -972,6 +993,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
         private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_Resolve;
         public struct PlayerActions
         {
             private @GameInput m_Wrapper;
@@ -980,6 +1002,7 @@ namespace UnityEngine.InputSystem
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            public InputAction @Resolve => m_Wrapper.m_Player_Resolve;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1001,6 +1024,9 @@ namespace UnityEngine.InputSystem
                     @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                     @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                     @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                    @Resolve.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnResolve;
+                    @Resolve.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnResolve;
+                    @Resolve.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnResolve;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -1017,6 +1043,9 @@ namespace UnityEngine.InputSystem
                     @Interact.started += instance.OnInteract;
                     @Interact.performed += instance.OnInteract;
                     @Interact.canceled += instance.OnInteract;
+                    @Resolve.started += instance.OnResolve;
+                    @Resolve.performed += instance.OnResolve;
+                    @Resolve.canceled += instance.OnResolve;
                 }
             }
         }
@@ -1177,6 +1206,7 @@ namespace UnityEngine.InputSystem
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
+            void OnResolve(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

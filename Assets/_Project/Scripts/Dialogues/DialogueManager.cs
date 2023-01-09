@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour, IInteractable
     public bool resetIndexOnEnd = true;
     public bool isAutoplay = false;
     public float autoPlayTime = 2;
-    PlayerMovement player;    
+    PlayerMovement player;
 
     public List<DialogueSentence> sentences;
 
@@ -65,11 +65,18 @@ public class DialogueManager : MonoBehaviour, IInteractable
         var actualSentence = sentences[sentenceIndex];
         GameEvents.Instance.OnDialogueShow(actualSentence.WhosTalking, actualSentence.Sentence);
 
+        Invoke("InvokeEvent", actualSentence.eventDelay);
+
         if (isAutoplay)
         {
             StopAllCoroutines();
             StartCoroutine(PlayNextSentence());
         }
+    }
+
+    void InvokeEvent()
+    {
+        sentences[sentenceIndex].sentenceEvent?.Invoke();
     }
 
     IEnumerator PlayNextSentence()
@@ -95,4 +102,6 @@ public class DialogueSentence
     public string WhosTalking;
     [TextArea(2, 5)]
     public string Sentence;
+    public float eventDelay;
+    public UnityEvent sentenceEvent;
 }
