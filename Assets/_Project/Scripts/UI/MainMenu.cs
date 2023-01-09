@@ -22,4 +22,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.OpenURL(url);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
