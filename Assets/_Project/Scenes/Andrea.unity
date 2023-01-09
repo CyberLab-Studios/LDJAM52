@@ -1682,9 +1682,17 @@ MonoBehaviour:
   sentences:
   - WhosTalking: A Totally Crooked Sign
     Sentence: The Unholy Temple of Chicken Itza, enter at your peril...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: A Totally Crooked Sign
     Sentence: Actually, i'm promising a temple here, but honestly dunno if the 3d
       artist managed to do it in time or slacked, so...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -4177,8 +4185,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: The Old Forest Farm
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: I've never been very creative with naming things...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -5693,8 +5709,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: Well, actually, not really that close
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: ...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -6321,8 +6345,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: Close-ish
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: I have the feeling that i'm getting close-ish!
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -7407,7 +7439,7 @@ MonoBehaviour:
   manualPositionAndScale: 0
   renderPriority: 1
   styledSpace0: 0
-  overrideMaterial: {fileID: 1404549821}
+  overrideMaterial: {fileID: 416576507}
   overrideCamToVolumeDistance: 1
   overrideVolumeDistanceFade: 0
   version: 0
@@ -7439,7 +7471,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1450241873}
+  - {fileID: 807259105}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14301,9 +14333,17 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: Incredibly Rare Nervous Daisy Phantom Parsnip Shield Cabbage.
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Sign
     Sentence: The ancients say that, this specific plant blooms only every 2341,4
       years.
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -14764,6 +14804,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Traditional Ohio Sign
     Sentence: Most normal field in Ohio
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -15835,6 +15879,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f24ddbe99546542afec53853ddf1c9, type: 3}
+--- !u!21 &416576507
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Override
+  m_Shader: {fileID: 4800000, guid: a3a3bc8785681554d9558e2ea68f100e, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Banner: 1
+    - _DirectionalCat: 1
+    - _DirectionalFalloff: 2
+    - _DirectionalIntensity: 1
+    - _FogAxisMode: 1
+    - _FogCat: 1
+    - _FogColorDuo: 1
+    - _FogDistanceEnd: 200
+    - _FogDistanceFalloff: 2
+    - _FogDistanceStart: -200
+    - _FogHeightEnd: 200
+    - _FogHeightFalloff: 2
+    - _FogHeightStart: 0
+    - _FogIntensity: 1
+    - _FogLayersMode: 0
+    - _IsHeightFogPreset: 1
+    - _IsHeightFogShader: 1
+    - _NoiseCat: 1
+    - _NoiseDistanceEnd: 50
+    - _NoiseIntensity: 1
+    - _NoiseModeBlend: 1
+    - _NoiseScale: 30
+    - _SkyboxCat: 1
+    - _SkyboxFogBottom: 0
+    - _SkyboxFogFalloff: 1
+    - _SkyboxFogFill: 1
+    - _SkyboxFogHeight: 1
+    - _SkyboxFogIntensity: 1
+    - _SkyboxFogOffset: 0
+    m_Colors:
+    - _DirectionalColor: {r: 1, g: 0.7793103, b: 0.5, a: 1}
+    - _DirectionalDir: {r: 0, g: 0, b: 0, a: 0}
+    - _FogAxisOption: {r: 0, g: 0, b: 0, a: 0}
+    - _FogColorEnd: {r: 0.8862745, g: 1.443137, b: 2, a: 1}
+    - _FogColorStart: {r: 0.4411765, g: 0.722515, b: 1, a: 1}
+    - _NoiseSpeed: {r: 0.5, g: 0, b: 0.5, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &417810950
 GameObject:
   m_ObjectHideFlags: 0
@@ -15958,6 +16061,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Weird Looking Statue
     Sentence: SUS
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -16519,8 +16626,16 @@ MonoBehaviour:
   - WhosTalking: Sussy
     Sentence: Hey! did you notice my collection of things that vaguely look like
       characters from the famous indie game Among Us?
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Sussy
     Sentence: That's peak comedy!
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls:
@@ -16727,8 +16842,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: ' Joey Jo-Jo Junior Shabadoo''s World Renowned Fence'
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: That's the worst name I ever heard.
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -17538,8 +17661,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Slightly Crooked Sign
     Sentence: But... there is a bit of uneasiness in the air...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: Oh no, what now??
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -29546,6 +29677,41 @@ Transform:
   m_Father: {fileID: 532608596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &807259105
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Height Fog Global
+  m_Shader: {fileID: 4800000, guid: 3a7ef1b66bafb7a448a880ef76d2e6e6, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AdvancedCat: 1
+    - _AlphaCutoff: 0.5
+    - _Banner: 1
+    - _DirectionalCat: 1
+    - _FogAxisMode: 1
+    - _FogCat: 1
+    - _HeightFogGlobal: 1
+    - _IsHeightFogShader: 1
+    - _NoiseCat: 1
+    - _SkyboxCat: 1
+    m_Colors:
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &809599233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40732,8 +40898,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Totally Regular Sign
     Sentence: You are now leaving Ohio
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: Thank God!
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -63653,65 +63827,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1738694, y: 2.6962197, z: 0.08094377}
   m_Center: {x: 0, y: 1.3244134, z: -0.040471826}
---- !u!21 &1404549821
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Override
-  m_Shader: {fileID: 4800000, guid: a3a3bc8785681554d9558e2ea68f100e, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _Banner: 1
-    - _DirectionalCat: 1
-    - _DirectionalFalloff: 2
-    - _DirectionalIntensity: 1
-    - _FogAxisMode: 1
-    - _FogCat: 1
-    - _FogColorDuo: 1
-    - _FogDistanceEnd: 200
-    - _FogDistanceFalloff: 2
-    - _FogDistanceStart: -200
-    - _FogHeightEnd: 200
-    - _FogHeightFalloff: 2
-    - _FogHeightStart: 0
-    - _FogIntensity: 1
-    - _FogLayersMode: 0
-    - _IsHeightFogPreset: 1
-    - _IsHeightFogShader: 1
-    - _NoiseCat: 1
-    - _NoiseDistanceEnd: 50
-    - _NoiseIntensity: 1
-    - _NoiseModeBlend: 1
-    - _NoiseScale: 30
-    - _SkyboxCat: 1
-    - _SkyboxFogBottom: 0
-    - _SkyboxFogFalloff: 1
-    - _SkyboxFogFill: 1
-    - _SkyboxFogHeight: 1
-    - _SkyboxFogIntensity: 1
-    - _SkyboxFogOffset: 0
-    m_Colors:
-    - _DirectionalColor: {r: 1, g: 0.7793103, b: 0.5, a: 1}
-    - _DirectionalDir: {r: 0, g: 0, b: 0, a: 0}
-    - _FogAxisOption: {r: 0, g: 0, b: 0, a: 0}
-    - _FogColorEnd: {r: 0.8862745, g: 1.443137, b: 2, a: 1}
-    - _FogColorStart: {r: 0.4411765, g: 0.722515, b: 1, a: 1}
-    - _NoiseSpeed: {r: 0.5, g: 0, b: 0.5, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1001 &1406058590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65508,41 +65623,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f24ddbe99546542afec53853ddf1c9, type: 3}
---- !u!21 &1450241873
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Height Fog Global
-  m_Shader: {fileID: 4800000, guid: 3a7ef1b66bafb7a448a880ef76d2e6e6, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AdvancedCat: 1
-    - _AlphaCutoff: 0.5
-    - _Banner: 1
-    - _DirectionalCat: 1
-    - _FogAxisMode: 1
-    - _FogCat: 1
-    - _HeightFogGlobal: 1
-    - _IsHeightFogShader: 1
-    - _NoiseCat: 1
-    - _SkyboxCat: 1
-    m_Colors:
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1451590398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66882,8 +66962,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: Close...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: I have the feeling that i'm getting close!
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -70244,6 +70332,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: A bit more Crooked Sign
     Sentence: Beware of what's ahead of your path...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -74265,6 +74357,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: Or, more proably, i just made it up and it's just a regular plant...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -75961,8 +76057,16 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Traditional Ohio Sign
     Sentence: Welcome to... Ohio!
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: Oh... crap.
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -79912,8 +80016,16 @@ MonoBehaviour:
   - WhosTalking: Sign
     Sentence: Beware! Chickens on the loose! Proceed with caution (or a really big
       bag of feed).
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: Wonder who left those signs, he seems to be three steps ahead of me...
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -84656,6 +84768,119 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f24ddbe99546542afec53853ddf1c9, type: 3}
+--- !u!1 &1970221658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970221663}
+  - component: {fileID: 1970221662}
+  - component: {fileID: 1970221661}
+  - component: {fileID: 1970221660}
+  - component: {fileID: 1970221659}
+  m_Layer: 0
+  m_Name: TempleEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1970221659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970221658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07185db1a4b1a2479956af3670cf147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: '<style=Player/Interact> Enter in The Unholy Temple of Chicken
+    Itza '
+  sceneName: Tempio
+--- !u!65 &1970221660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970221658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1970221661
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970221658}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1970221662
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970221658}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1970221663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970221658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.21, y: 1.112, z: 127.292}
+  m_LocalScale: {x: 3.8373, y: 3.8373, z: 3.8373}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 44
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1973958786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85462,6 +85687,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Farmer
     Sentence: Where did it go?
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -92362,6 +92591,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Weird Looking Statue
     Sentence: SUS
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -92421,9 +92654,17 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Sign
     Sentence: Where did indeed the Chicken go?
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - WhosTalking: Farmer
     Sentence: Wait... Why there is even a sign for this? I mean... it just happened
       moments ago
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
@@ -92568,6 +92809,10 @@ MonoBehaviour:
   sentences:
   - WhosTalking: Weird Looking Statue
     Sentence: SUS
+    eventDelay: 0
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   onDialogueStart:
     m_PersistentCalls:
       m_Calls: []
