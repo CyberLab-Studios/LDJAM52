@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Tempio.unity
     guid: 95dfa426f904ced41b1c774ea72fb2e7
+  - enabled: 1
+    path: Assets/_Project/Scenes/Spaccatutto.unity
+    guid: 1372a5ea1190fbb4392477f4da3580bc
   m_configObjects: {}
