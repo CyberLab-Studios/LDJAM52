@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DestructibleObject : MonoBehaviour, IEnemy
+public class KillableObject : MonoBehaviour, IEnemy
 {
     public float health;
     public UnityEvent onDie;
-
+    bool isDied = false;
 
     void Update()
     {
@@ -19,7 +19,11 @@ public class DestructibleObject : MonoBehaviour, IEnemy
 
     public void Die()
     {
-        onDie?.Invoke();
+        if (!isDied)
+        {
+            onDie?.Invoke();
+            isDied = true;
+        }
     }
 
     public void GiveDamage(float damage)

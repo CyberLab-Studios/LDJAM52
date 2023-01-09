@@ -6,12 +6,14 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerAttack : MonoBehaviour
 {
     public Animator anim;
+    public Transform body;
     public float weaponCooldown;
     public float animationTime = 3;
     public AudioData swoosh;
     public float audioDelay = .5f;
     bool hasScythe = false;
     float tempCooldown;
+    float damage;
     bool hasControl = true;
 
     public void OnAttack(CallbackContext ctx)
@@ -19,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started && tempCooldown <= 0 && hasScythe && hasControl)
         {
             anim.SetTrigger("Attack");
-            Invoke("PlayAudio", audioDelay);
+            Invoke("MakeAttack", audioDelay);
             tempCooldown = weaponCooldown;
             GameEvents.Instance.OnAttack(animationTime);
         }
@@ -49,14 +51,26 @@ public class PlayerAttack : MonoBehaviour
         GameEvents.Instance.onDialogueEnd -= GiveControl;
     }
 
-    void PlayAudio()
+    void MakeAttack()
     {
         Utility.PlayOneShotAudio(gameObject, swoosh.clip, swoosh.volume);
+        if (Physics.Raycast(new Ray(body.position + body.up, body.forward), out RaycastHit hit, 3f))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+
+            if (hit.collider.TryGetComponent(out IEnemy enemy))
+            {
+                Debug.Log(enemy);
+
+                enemy.TakeDamage(damage);
+            }
+        }
     }
 
     private void GetScytheData(ScytheData scythe)
     {
         weaponCooldown = scythe.Cooldown;
+        damage = scythe.Damage;
         hasScythe = true;
     }
 

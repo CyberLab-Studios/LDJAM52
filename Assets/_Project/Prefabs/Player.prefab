@@ -170,6 +170,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 36403313-556c-4497-a431-fcc2ddac7a9d
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 135d03dd-c7c9-4a9c-99cb-5d0f67f77c01
+    m_ActionName: Player/Resolve[/Keyboard/f5]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -251,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 6171272482776893922}
+  body: {fileID: 235576365539300248}
   weaponCooldown: 1
   animationTime: 2
   swoosh: {fileID: 11400000, guid: 956c0a31e0229cf4baeddcebf34e98da, type: 2}

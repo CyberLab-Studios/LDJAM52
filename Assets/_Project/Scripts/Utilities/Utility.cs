@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 namespace CyberLabStudios.Game.Utilities
 {
@@ -36,6 +37,8 @@ namespace CyberLabStudios.Game.Utilities
             left = right;
             right = temp;
         }
+
+        public static void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName);
 
         public static bool IsFilled(this string str) => !str.IsNullOrEmpty() && !str.IsNullOrWhiteSpace();
         public static bool IsNullOrEmpty(this string str) => string.IsNullOrEmpty(str);
